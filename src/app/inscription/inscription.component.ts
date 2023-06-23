@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, NgForm } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-inscription',
@@ -7,17 +7,18 @@ import { FormControl, FormGroup, NgForm } from '@angular/forms';
   styleUrls: ['./inscription.component.css']
 })
 export class InscriptionComponent {
-constructor(){
-
+  myformbuilder:any
+constructor(private fb:FormBuilder){
+this.myformbuilder = this.fb.group({
+  name:[''],
+  age:['']
+})
 }
 
-myForm = new FormGroup({
-  name: new FormControl,
-  age: new FormControl,
-});
+
 
 print(){
-  console.log(this.myForm.value)
+  console.log(this.myformbuilder.value)
 }
 
  
