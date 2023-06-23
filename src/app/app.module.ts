@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
 import { ContactComponent } from './contact/contact.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { InscriptionComponent } from './inscription/inscription.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,14 @@ import { NavbarComponent } from './navbar/navbar.component';
     HomeComponent,
     ProductsComponent,
     ContactComponent,
-    NavbarComponent
+    NavbarComponent,
+    InscriptionComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

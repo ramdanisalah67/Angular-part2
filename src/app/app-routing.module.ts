@@ -7,9 +7,12 @@ import { adminGuard } from './guards/admin.guard';
 import { ProductsComponent } from './products/products.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
+import { InscriptionComponent } from './inscription/inscription.component';
 
 const routes: Routes = [
   { path:'',component:HomeComponent },
+  { path:'register',component:InscriptionComponent },
+
   { path:'first',component:FirstChildComponent,canActivate:[adminGuard] },
   { path:'about/:id',component:AboutComponent },
   //{ path:'about/:id',redirectTo:'second',pathMatch:'full' },

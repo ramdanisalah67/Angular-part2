@@ -1,0 +1,15 @@
+<p>inscription works!</p>
+<div class="container-fluid">
+<form #f="ngForm" (ngSubmit)="send(f)" >
+    Name
+    <input type="text" name="Name" #myname="ngModel" required placeholder="Enter Your Name" ngModel minlength="5"> <br><br>
+    <div class="alert alert-danger" *ngIf="myname.errors?.['required'] && myname.touched">name is required</div><br>
+    <div class="alert alert-danger" *ngIf="myname.errors?.['minlength'] && myname.touched">must be greather than 5</div><br>
+
+    email
+    <input type="email" name="email"  #myemail="ngModel" required placeholder="Enter Your email" ngModel minlength="2"><br><br>
+    <div class="alert alert-danger"   *ngIf="myemail.errors?.['required'] && myemail.touched">email is required</div><br>
+    <div class="alert alert-danger"   *ngIf="myemail.errors?.['minlength'] && myemail.touched">email is samall</div><br>
+    <input class="btn btn-primary" type="submit" value="send" [disabled]="f.invalid"> 
+</form>
+</div>
