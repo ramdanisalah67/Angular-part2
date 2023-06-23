@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, FormGroup, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-inscription',
@@ -11,11 +11,14 @@ constructor(){
 
 }
 
+myForm = new FormGroup({
+  name: new FormControl,
+  age: new FormControl,
+});
 
-
-send(f:NgForm){
-let data=f.value
-    console.log(data) 
+print(){
+  console.log(this.myForm.value)
 }
+
  
 }
