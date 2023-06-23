@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FirstServiceService } from './services/first-service.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'test';
+mypath=""
+myname=""
+  constructor(private myservice:FirstServiceService){
+    this.myname=myservice.name
+    this.mypath=myservice.url
+  }
 }

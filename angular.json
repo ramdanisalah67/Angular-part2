@@ -25,9 +25,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              
             ],
-            "scripts": []
+            "scripts": [ 
+        
+            
+
+          
+          ]
           },
           "configurations": {
             "production": {
@@ -94,5 +99,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "d950b7b6-4e3c-42cd-aa8d-62d6bb4df2e4"
   }
 }
