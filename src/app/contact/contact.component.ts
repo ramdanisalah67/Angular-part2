@@ -9,10 +9,10 @@ import {Subscription} from 'rxjs'
 })
 export class ContactComponent implements OnInit,OnDestroy {
 num:any
-ob:Subscription
+
   constructor(private myservice:FirstServiceService){
     
-    this.ob= myservice.testObservable().subscribe(val=>this.num=val)
+
 
   }
   ngOnInit(): void {
@@ -20,6 +20,6 @@ ob:Subscription
   }
   ngOnDestroy(): void {
     console.log('destroy,observable unsubscription finish')
-    this.ob.unsubscribe()
+   
   }
 }
