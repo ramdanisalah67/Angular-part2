@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-inscription',
@@ -10,9 +10,20 @@ export class InscriptionComponent implements OnInit {
   myformbuilder:any
 constructor(private fb:FormBuilder){
 
+
 this.myformbuilder = this.fb.group({
   name:['',Validators.required],
-  age:['',Validators.pattern("[0-9]{1-3}")]
+  age:['',Validators.pattern("[0-9]{1-3}")],
+  items:this.fb.array([
+    this.fb.group({
+      username:[''],
+      password:['']
+    }),
+    this.fb.group({
+      username:[''],
+      password:['']
+    })
+  ])
 })
 
 }
@@ -31,9 +42,21 @@ get age(){
   return this.myformbuilder.get('age')
 }
 
+get items(){
+  return this.myformbuilder.get('items') as FormArray
+}
 print(){
   console.log(this.myformbuilder.value)
 }
 
- 
+addNewRow(){
+let myRow = this.fb.group({
+  username:[''],
+  password:['']
+})
+this.items.push(myRow)
+}
+deleteRow(i:any){
+  this.items.removeAt(i)
+}
 }

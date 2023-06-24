@@ -7,6 +7,15 @@
     <input type="text"formControlName="age" required ><br><br>
     <div class="alert alert-danger" *ngIf="age.touched && age.hasError('required')">age must be not empty</div>
 
+    <div formArrayName="items">
+        <div *ngFor="let item of myformbuilder.controls.items['controls'];index as i" [formGroupName]="i">
+               Username <input type="text" name="" formControlName="username">
+               Password <input type="text" name="" formControlName="password">
+                <input type="submit" value="deleteRow" (click)="deleteRow(i)">
+        </div>
+      
+    </div>
+    <input type="submit" value="AddRow" (click)="addNewRow()"/>
     <input type="submit" value="send">
 </form>
 </div>
