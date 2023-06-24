@@ -13,7 +13,7 @@ constructor(private fb:FormBuilder){
 
 this.myformbuilder = this.fb.group({
   name:['',Validators.required],
-  age:['',Validators.pattern("[0-9]{1-3}")],
+  age:['',Validators.minLength(3)||Validators.required],
   items:this.fb.array([
     this.fb.group({
       username:[''],
@@ -29,10 +29,10 @@ this.myformbuilder = this.fb.group({
 }
   ngOnInit(): void {
   
-    this.myformbuilder.patchValue({
+   /* this.myformbuilder.patchValue({
       name:'user1',
       age: 25
-    })
+    })*/
   }
 
 get name(){

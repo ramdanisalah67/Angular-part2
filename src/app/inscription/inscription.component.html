@@ -5,8 +5,8 @@
     <div class="alert alert-danger" *ngIf="name.touched && name.hasError('required')">name must be not empty</div>
     age
     <input type="text"formControlName="age" required ><br><br>
+    <div class="alert alert-danger" *ngIf="age.touched && age.hasError('minlength')">age must be greather than 3</div>
     <div class="alert alert-danger" *ngIf="age.touched && age.hasError('required')">age must be not empty</div>
-
     <div formArrayName="items">
         <div *ngFor="let item of myformbuilder.controls.items['controls'];index as i" [formGroupName]="i">
                Username <input type="text" name="" formControlName="username">
