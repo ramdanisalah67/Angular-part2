@@ -1,9 +1,12 @@
 <div class="container py-2">
     <form [formGroup]="myformbuilder" (ngSubmit)="print()" >
     name
-    <input type="text" formControlName="name"><br><br>
+    <input type="text" formControlName="name" required><br><br>
+    <div class="alert alert-danger" *ngIf="name.touched && name.hasError('required')">name must be not empty</div>
     age
-    <input type="text"formControlName="age" ><br><br>
+    <input type="text"formControlName="age" required ><br><br>
+    <div class="alert alert-danger" *ngIf="age.touched && age.hasError('required')">age must be not empty</div>
+
     <input type="submit" value="send">
 </form>
 </div>

@@ -6,6 +6,6 @@ import { Injectable } from '@angular/core';
 export class FirstServiceService {
 name="salah"
 url="/api/v1"
-IsAdmin=false
+IsAdmin=true
   constructor() { }
 }
