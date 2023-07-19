@@ -10,6 +10,7 @@ export class AppComponent {
   title = 'test';
 mypath=""
 myname=""
+productName="IPHONE 11"
   constructor(private myservice:FirstServiceService){
     this.myname=myservice.name
     this.mypath=myservice.url
